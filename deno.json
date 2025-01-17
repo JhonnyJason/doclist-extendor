@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --deny-env --allow-read --allow-write --allow-net=www.bilder-befunde.at:443 ./src/main.js ./testing/input.csv ./testing/output.csv",
+    "build-lin": "deno compile --deny-env --allow-read --allow-write --allow-net=www.bilder-befunde.at:443  --output ./builds/doclist-extendor.bin ./src/main.js",
+    "build-win": "deno compile --deny-env --allow-read --allow-write --allow-net=www.bilder-befunde.at:443  --output builds/doclist-extendor.exe --target x86_64-pc-windows-msvc --icon ./assets/favicon.ico ./src/main.js",
+    "build": "deno run build-lin && deno run build-win"
+  }
+}
